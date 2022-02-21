@@ -8,68 +8,55 @@
 </p>
 
 
-Keypedia is a famous keyboard shop in Indonesia made by a famous computer science student from Korea. To expand its business, Keypedia wants to create a website for their shop. In that website, people can find information about Keypedia’s products and order it. This website enables the customers to know what is inside Keypedia.
-As a web developer, you are asked to create a website using Laravel 8 for this online shop. There are three types of user’s role in this website: Manager, Customer, and Guest (non-logged-in user).
+    Keypedia is a famous keyboard shop in Indonesia made by a famous computer science student from Korea. To expand its business, Keypedia wants to create a website for their shop. In that website, people can find information about Keypedia’s products and order it. This website enables the customers to know what is inside Keypedia.
+    As a web developer, you are asked to create a website using Laravel 8 for this online shop. There are three types of user’s role in this website: Manager, Customer, and Guest (non-logged-in user).
 Each page shows greeting to user, and current date time. The descriptions for each page are:
+
 1.	Login Page
-This page allows guest to log in to the website. Display an error message on the Login Page if user enters wrong combination of Email and Password.
-If user has entered correct Email and Password, the page will be redirected to the Home Page based on the user’s role. If user checks the Remember Me checkbox, the website will save the Email and Password using cookies for 7 days. The following table shows the existing fields on this page and the validation for each field:
+    This page allows guest to log in to the website. Display an error message on the Login Page if user enters wrong combination of Email and Password.
+If user has entered correct Email and Password, the page will be redirected to the Home Page based on the user’s role. If user checks the Remember Me checkbox, the website will save the Email and Password using cookies for 7 days.
 
+2.	Register Page
+    This page allows guest to register themselves as Keypedia customer. Display an error message if user input incorrect personal data.
 
-## About Laravel
+3.	Home
+    This page allows user to see all Keypedia categories and accessible for all users. In this page, user can also pick the Keypedia categories at Categories dropdown menu in the navbar. 
+    In this page, guest can Login or Register. After logged in, display the user’s username between the Categories menu and current date. Then make a dropdown to display some menu through the username’s menu.
+    For manager, there are several menus such as Add Keyboard, Manage Categories, Change Password, and Logout at the username’s dropdown menu in the navbar. While for customer, the menus are My Cart, Transaction History, Change Password, and Logout at the username’s dropdown menu in the navbar.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+4.	View Keyboard Page
+    This page is accessible for all users. This page shows all Keypedia product based on its Categories. For manager, this page can also be used to update or delete each keyboard. This page also includes pagination to display 8 items in per page and search field to search keyboard by its name and price. This page displays keyboard’s image, name, and price.  Each keyboard can be clicked to redirect into Keyboard Detail Page.
+    Each product in the lists have Delete Keyboard and Update Keyboard buttons:
+-	If manager clicks Delete Keyboard button, it will delete the selected product
+-	If manager clicks Update Keyboard button, it will redirect them to Update Keyboard Page
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+5.	Update Keyboard Page
+    This page is only accessible for manager. This page will show all the data of the keyboard and its description. 
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+6.	Keyboard Detail Page
+    This page allows all users to see details of each keyboard. There is also an Add to Cart button. Validate the button to only appear for guest and customer, then validate if guest clicks Add to Cart button, they will be redirected to Login Page. In this page, there will be a text field for inputting quantity of the product you want to purchase. There will be an error message if user input a quantity below 1.
 
-## Learning Laravel
+7.	Add Keyboard Page
+    This page will allow manager to add new keyboard and can be access when Manager choose Add Keyboard button at username’s dropdown menu in the navbar. Display an error message if user input incorrect data. 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+8.	Manage Category Page
+    This page is accessible only for manager. First, insert the category’s image and name to the database using seeder. Then display all the category’s image and name.
+    Each product in the lists have Update Category and Delete Category buttons:
+-	If Manager click Delete Category button, it will delete the selected category
+-	If Manager click Update Category button, they will be redirected to Update Category Page
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+9.	Update Category Page
+    This page allows manager to update existing category. Display an error message if Manager input incorrect category data. If Manager click Update button, then update current selected category with updated data. After that, redirect back to Manage Category Page.
 
-## Laravel Sponsors
+10.	My Cart Page
+    This page is accessible for customer to show customer’s cart. In this page, users can see all the keyboard details in the cart, such as keyboard’s image, name, subtotal (price x quantity) and quantity.
+    There will be 2 buttons: Update and Checkout. When user click Update button, it will be used to update its item quantity (quantity must not below 0). If the customer update quantity to 0, then it will delete the selected items from the cart. If user clicks Checkout button, it will delete all items in the cart and those items will be inserted to Transaction History.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+11.	Transaction History Page
+    This page is accessible for customer to show their transaction history. This page display will be sorted by the newest transaction. If the customer clicks a transaction history, it will redirect to selected Transaction History Detail Page.
 
-### Premium Partners
+12.	Transaction History Detail Page
+    This page will show the transaction history detail from the selected transaction history at Transaction History Page. The information that must be displayed are keyboard’s image, name, subtotal (price x quantity) and quantity. At the bottom of transaction history detail, there will be Total Price of the transaction history.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-- **[Romega Software](https://romegasoftware.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+13.	Change Password Page
+    Logged-in users (customer and manager) can change their password in this page. 
