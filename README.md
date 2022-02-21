@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+
+Keypedia is a famous keyboard shop in Indonesia made by a famous computer science student from Korea. To expand its business, Keypedia wants to create a website for their shop. In that website, people can find information about Keypedia’s products and order it. This website enables the customers to know what is inside Keypedia.
+As a web developer, you are asked to create a website using Laravel 8 for this online shop. There are three types of user’s role in this website: Manager, Customer, and Guest (non-logged-in user).
+Each page shows greeting to user, and current date time. The descriptions for each page are:
+1.	Login Page
+This page allows guest to log in to the website. Display an error message on the Login Page if user enters wrong combination of Email and Password.
+If user has entered correct Email and Password, the page will be redirected to the Home Page based on the user’s role. If user checks the Remember Me checkbox, the website will save the Email and Password using cookies for 7 days. The following table shows the existing fields on this page and the validation for each field:
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
